@@ -39,6 +39,9 @@
   
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -151,86 +154,7 @@
 
 <div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
 
-<pre><code class="javascript">var times = [&#123;
-   b: &quot;21:00:00&quot;,
-    e: &quot;01:00:00&quot;,
-    bd: &quot;0&quot;,
-    ed: &quot;0&quot;
-  &#125;, &#123;
-    b: &quot;09:00:00&quot;,
-    e: &quot;10:15:00&quot;,
-    bd: &quot;0&quot;,
-    ed: &quot;0&quot;
-  &#125;, &#123;
-    b: &quot;10:30:00&quot;,
-    e: &quot;11:30:00&quot;,
-    bd: &quot;0&quot;,
-    ed: &quot;0&quot;
-  &#125;, &#123;
-    b: &quot;13:30:00&quot;,
-    e: &quot;15:00:00&quot;,
-    bd: &quot;0&quot;,
-    ed: &quot;0&quot;
-  &#125;];
-
-  function getTicks(times) &#123;
-    var ticks = [];
-    times.forEach(x =&gt; &#123;
-      ticks = ticks.concat(timeToTicks(x.b, x.e));
-    &#125;);
-    return ticks;
-  &#125;
-
-  function timeToTicks(start, end) &#123;
-    //开始的时间点
-    var ed = time2int(end);
-    var i = time2int(start);
-    var minute = 0,
-      hour = 0;
-    var ticks = [int2time(i)];
-    while (i != ed) &#123;
-      i++;
-      hour = Math.floor(i / 100);
-      minute = i % 100;
-      if (minute &gt;= 60) &#123;
-        hour += 1;
-        minute -= 60;
-      &#125;
-      if (hour &gt;= 24) &#123;
-        hour = 0;
-      &#125;
-      i = hour * 100 + minute;
-      ticks.push(int2time(i));
-    &#125;
-    return ticks;
-  &#125;
-  /**
-   * 将给定的时间转换为分钟的整数
-   */
-  function time2int(t) &#123;
-    return parseInt(t.replace(/:/g, &#39;&#39;)) / 100
-  &#125;
-  /**
-   * 将给定的整型数据转换为精确到分钟的时间字符串
-   * @param i 整型数值
-   * @returns 精确到分钟的时间字符串
-   */
-  function int2time(i) &#123;
-    var st = padZero(i, 4);
-    return st.substring(0, 2) + &#39;:&#39; + st.substring(2);
-  &#125;
-  /**
-   * 不足位数在左边补0
-   * @param number
-   * @param fill
-   * @returns
-   */
-  function padZero(number, fill) &#123;
-    var new_number = number * (number &gt; 0 ? 1 : -1),
-      len = (&#39;&#39; + new_number).length;
-    return Array(fill &gt; len ? fill - len + 1 || 0 : 0).join(0) + new_number;
-&#125;
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> times = [&#123;</span><br><span class="line">   <span class="attr">b</span>: <span class="string">&quot;21:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">e</span>: <span class="string">&quot;01:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">bd</span>: <span class="string">&quot;0&quot;</span>,</span><br><span class="line">    <span class="attr">ed</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&quot;09:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">e</span>: <span class="string">&quot;10:15:00&quot;</span>,</span><br><span class="line">    <span class="attr">bd</span>: <span class="string">&quot;0&quot;</span>,</span><br><span class="line">    <span class="attr">ed</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&quot;10:30:00&quot;</span>,</span><br><span class="line">    <span class="attr">e</span>: <span class="string">&quot;11:30:00&quot;</span>,</span><br><span class="line">    <span class="attr">bd</span>: <span class="string">&quot;0&quot;</span>,</span><br><span class="line">    <span class="attr">ed</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&quot;13:30:00&quot;</span>,</span><br><span class="line">    <span class="attr">e</span>: <span class="string">&quot;15:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">bd</span>: <span class="string">&quot;0&quot;</span>,</span><br><span class="line">    <span class="attr">ed</span>: <span class="string">&quot;0&quot;</span></span><br><span class="line">  &#125;];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getTicks</span>(<span class="params">times</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> ticks = [];</span><br><span class="line">    times.<span class="title function_">forEach</span>(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">      ticks = ticks.<span class="title function_">concat</span>(<span class="title function_">timeToTicks</span>(x.<span class="property">b</span>, x.<span class="property">e</span>));</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> ticks;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">timeToTicks</span>(<span class="params">start, end</span>) &#123;</span><br><span class="line">    <span class="comment">//开始的时间点</span></span><br><span class="line">    <span class="keyword">var</span> ed = <span class="title function_">time2int</span>(end);</span><br><span class="line">    <span class="keyword">var</span> i = <span class="title function_">time2int</span>(start);</span><br><span class="line">    <span class="keyword">var</span> minute = <span class="number">0</span>,</span><br><span class="line">      hour = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> ticks = [<span class="title function_">int2time</span>(i)];</span><br><span class="line">    <span class="keyword">while</span> (i != ed) &#123;</span><br><span class="line">      i++;</span><br><span class="line">      hour = <span class="title class_">Math</span>.<span class="title function_">floor</span>(i / <span class="number">100</span>);</span><br><span class="line">      minute = i % <span class="number">100</span>;</span><br><span class="line">      <span class="keyword">if</span> (minute &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">        hour += <span class="number">1</span>;</span><br><span class="line">        minute -= <span class="number">60</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (hour &gt;= <span class="number">24</span>) &#123;</span><br><span class="line">        hour = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      i = hour * <span class="number">100</span> + minute;</span><br><span class="line">      ticks.<span class="title function_">push</span>(<span class="title function_">int2time</span>(i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ticks;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 将给定的时间转换为分钟的整数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">time2int</span>(<span class="params">t</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(t.<span class="title function_">replace</span>(<span class="regexp">/:/g</span>, <span class="string">&#x27;&#x27;</span>)) / <span class="number">100</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 将给定的整型数据转换为精确到分钟的时间字符串</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> i 整型数值</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@returns</span> 精确到分钟的时间字符串</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">int2time</span>(<span class="params">i</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> st = <span class="title function_">padZero</span>(i, <span class="number">4</span>);</span><br><span class="line">    <span class="keyword">return</span> st.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">2</span>) + <span class="string">&#x27;:&#x27;</span> + st.<span class="title function_">substring</span>(<span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 不足位数在左边补0</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> <span class="variable">number</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> <span class="variable">fill</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@returns</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">padZero</span>(<span class="params">number, fill</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> new_number = number * (number &gt; <span class="number">0</span> ? <span class="number">1</span> : -<span class="number">1</span>),</span><br><span class="line">      len = (<span class="string">&#x27;&#x27;</span> + new_number).<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Array</span>(fill &gt; len ? fill - len + <span class="number">1</span> || <span class="number">0</span> : <span class="number">0</span>).<span class="title function_">join</span>(<span class="number">0</span>) + new_number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       </section>
 
