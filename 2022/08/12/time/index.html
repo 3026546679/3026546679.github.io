@@ -134,19 +134,87 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <p>@<a href="%E6%97%B6%E9%97%B4%E6%AE%B5%E5%8C%BA%E9%97%B4%E5%8C%BA%E9%97%B4%E8%8E%B7%E5%8F%96%E3%80%90%E5%88%86%E9%92%9F%E3%80%91">TOC</a></p>
+<pre><code class="javascript">var times = [&#123;
+   b: &quot;21:00:00&quot;,
+    e: &quot;01:00:00&quot;,
+    bd: &quot;0&quot;,
+    ed: &quot;0&quot;
+  &#125;, &#123;
+    b: &quot;09:00:00&quot;,
+    e: &quot;10:15:00&quot;,
+    bd: &quot;0&quot;,
+    ed: &quot;0&quot;
+  &#125;, &#123;
+    b: &quot;10:30:00&quot;,
+    e: &quot;11:30:00&quot;,
+    bd: &quot;0&quot;,
+    ed: &quot;0&quot;
+  &#125;, &#123;
+    b: &quot;13:30:00&quot;,
+    e: &quot;15:00:00&quot;,
+    bd: &quot;0&quot;,
+    ed: &quot;0&quot;
+  &#125;];
+
+  function getTicks(times) &#123;
+    var ticks = [];
+    times.forEach(x =&gt; &#123;
+      ticks = ticks.concat(timeToTicks(x.b, x.e));
+    &#125;);
+    return ticks;
+  &#125;
+
+  function timeToTicks(start, end) &#123;
+    //开始的时间点
+    var ed = time2int(end);
+    var i = time2int(start);
+    var minute = 0,
+      hour = 0;
+    var ticks = [int2time(i)];
+    while (i != ed) &#123;
+      i++;
+      hour = Math.floor(i / 100);
+      minute = i % 100;
+      if (minute &gt;= 60) &#123;
+        hour += 1;
+        minute -= 60;
+      &#125;
+      if (hour &gt;= 24) &#123;
+        hour = 0;
+      &#125;
+      i = hour * 100 + minute;
+      ticks.push(int2time(i));
+    &#125;
+    return ticks;
+  &#125;
+  /**
+   * 将给定的时间转换为分钟的整数
+   */
+  function time2int(t) &#123;
+    return parseInt(t.replace(/:/g, &#39;&#39;)) / 100
+  &#125;
+  /**
+   * 将给定的整型数据转换为精确到分钟的时间字符串
+   * @param i 整型数值
+   * @returns 精确到分钟的时间字符串
+   */
+  function int2time(i) &#123;
+    var st = padZero(i, 4);
+    return st.substring(0, 2) + &#39;:&#39; + st.substring(2);
+  &#125;
+  /**
+   * 不足位数在左边补0
+   * @param number
+   * @param fill
+   * @returns
+   */
+  function padZero(number, fill) &#123;
+    var new_number = number * (number &gt; 0 ? 1 : -1),
+      len = (&#39;&#39; + new_number).length;
+    return Array(fill &gt; len ? fill - len + 1 || 0 : 0).join(0) + new_number;
+  &#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       </section>
 
