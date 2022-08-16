@@ -28,7 +28,7 @@
 
   
 
-  <title>links | Wihend</title>
+  <title>hexo | Wihend</title>
 
   
 
@@ -51,7 +51,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
@@ -101,36 +101,165 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">links</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">hexo</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Wihend</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-08-16T08:58:02.000Z" itemprop="datePublished">2022-08-16</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/">📒 其他分享</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/hexo/">🏷️ hexo</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <blockquote>
+<h5 id="1-本地安装和配置Hexo"><a href="#1-本地安装和配置Hexo" class="headerlink" title="1.本地安装和配置Hexo"></a>1.本地安装和配置Hexo</h5></blockquote>
+<p>全局安装 hexo</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>然后进入文件夹</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ cd</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>可以看到在文件夹下生成了很多文件，有了这些文件就可以在本地编写博客了。 安装完这一部后，我们一般会个性化配置我们的网站信息。 打开 &#x3D;&#x3D;_config.yml&#x3D;&#x3D; 对下面这些代码进行配置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: <span class="title class_">Wihend</span></span><br><span class="line"><span class="attr">subtitle</span>: <span class="string">&#x27;Wihend的博客&#x27;</span></span><br><span class="line"><span class="attr">description</span>: <span class="string">&#x27;猪大肚不是很聪明&#x27;</span></span><br><span class="line"><span class="attr">keywords</span>:</span><br><span class="line">- javascript</span><br><span class="line">- hexo</span><br><span class="line"><span class="attr">author</span>: <span class="title class_">Wihend</span></span><br><span class="line"><span class="attr">language</span>: zh-cn</span><br><span class="line"><span class="attr">timezone</span>: <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h5 id="2-本地编写文章和预览"><a href="#2-本地编写文章和预览" class="headerlink" title="2.本地编写文章和预览"></a>2.本地编写文章和预览</h5><p>你可以执行下列命令来快速创建一篇新文章或者新的页面</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> pinia</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1、注意文件目录中的 <code>scaffolds</code> 文件是放到执行模板 例如 执行 <code>hexo new page 文章名称</code><br>2、这里特殊提一下<code>hexo new page about</code> 执行后 访问 网址&#x2F;about 就可跳转到此博客<br>3、与<code>hexo new pinia</code>的区别是一个会在文章列表中显示一个不显示，还有就是路径的区别</p>
+</blockquote>
+<p>这样一键就创建好了文章编写页面。默认的位置是。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\source\_posts\pinia.<span class="property">md</span></span><br></pre></td></tr></table></figure>
+<p>然后把你写的markdown文章直接复制进去，粘贴复制，保存。就完成了。接下来就需要查看一下自己的文章和网站的样子了。打开VSCode的终端，然后安装hexo-server，输入下面的命令。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+<p>刷的一瞬间，就完成了安装，然后启动服务。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器输入地址：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>,就可以看到你写的博客了。</p>
+<blockquote>
+<h5 id="3-把博客上传到云服务器-或者-github个人页面"><a href="#3-把博客上传到云服务器-或者-github个人页面" class="headerlink" title="3.把博客上传到云服务器 或者 github个人页面"></a>3.把博客上传到云服务器 或者 github个人页面</h5></blockquote>
+<h6 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h6><p>首先在本地使用cmd创建自己本机的密钥。创建密钥的命令是 <code>ssh-keygen -t rsa</code><br>然后在github中<code>settings/SSH and GPG keys</code> 里输入自己创建的密钥</p>
+<p>修改本地的hexo配置文件<code>_config.yml</code>,打开文件后，拖动到最后边，输入下面的配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repository</span>: git@github.<span class="property">com</span>:<span class="number">3026546679</span>/<span class="number">3026546679.</span>github.<span class="property">io</span>.<span class="property">git</span></span><br><span class="line">  <span class="attr">branch</span>: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，输入下面的命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<h6 id="上传到服务器"><a href="#上传到服务器" class="headerlink" title="上传到服务器"></a>上传到服务器</h6><p>如果是用的服务器需在服务器上输入密钥</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su root <span class="comment">//管理员账户 root 或者 其他</span></span><br><span class="line">mkdir ~<span class="regexp">/.ssh   /</span><span class="regexp">/创建存放密钥的文件夹</span></span><br><span class="line"><span class="regexp">vim ~/</span>.<span class="property">ssh</span>/authorized_keys  <span class="comment">//写入密钥</span></span><br></pre></td></tr></table></figure>
+
+<p>测试链接 更具自己的情况修改名称和服务器地址</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -v wihend@<span class="number">123.45</span><span class="number">.789</span><span class="number">.66</span> <span class="comment">//服务器ip</span></span><br></pre></td></tr></table></figure>
+
+<p>修改本地的hexo配置文件<code>_config.yml</code>,打开文件后，拖动到最后边，输入下面的配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repository</span>: wihend@<span class="number">123.45</span><span class="number">.789</span><span class="number">.66</span>:<span class="regexp">/home/</span>wihend/blog.<span class="property">git</span></span><br><span class="line">  <span class="attr">branch</span>: master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，输入下面的命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>如果一切正常，就可以直接传到服务器上，然后输入你的网址就可以完成博客的浏览了，我这里没有使用域名，如果你有域名，只要把域名解析到这个网址就可以了。</p>
+<blockquote>
+<p>如果执行 <code>hexo g -d || hexo clean</code> 那就说明 <code>_config.yml</code> 中的配置不符合规范，可在<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">官网文档</a>看看每个东西的注解</p>
+</blockquote>
+<blockquote>
+<h5 id="4-配置博客主题"><a href="#4-配置博客主题" class="headerlink" title="4.配置博客主题"></a>4.配置博客主题</h5></blockquote>
+<p>可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">官网主题</a>找到自己喜欢的主题</p>
+<p>个人比较喜欢 <a target="_blank" rel="noopener" href="https://github.com/miiiku/flex-block">https://github.com/miiiku/flex-block</a>一种简洁neumorphism风格</p>
+<p>每个风格的安装与配置皆有不同，许详细看主题中的github去配置</p>
+<blockquote>
+<h5 id="5-遇到的问题"><a href="#5-遇到的问题" class="headerlink" title="5.遇到的问题"></a>5.遇到的问题</h5></blockquote>
+<ol>
+<li>挑选主题最好不要挑复杂的 楼主试了 <a target="_blank" rel="noopener" href="https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/">https://louisbarranqueiro.github.io/hexo-theme-tranquilpeak/</a>踩了挺久的坑</li>
+<li>如果你内页加载的js和css都是404 要么是主题的问题，需要配置你下载的主题 要么是 <code>_config.yml中的relative_link设置成了true</code> 不知道这个是干啥的，官网的解释不大明白</li>
+</ol>
+
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/08/12/pinia/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">pinia</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "FOs3TzLF2jYol7FlPVwcrIgi-gzGzoHsz",
+        appKey: "UFK91nwXq4XsKdhJ0w1rxlfK",
+        avatar: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-53aebf66-c1dd-41a2-bc07-db6afd0d5330/a3ac6545-c1d3-4a04-a812-c177ce13d3cd.jpeg",
+        placeholder: "说点什么吧",
+        notify: true,
+        visitor: true,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -167,6 +296,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -224,7 +355,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
