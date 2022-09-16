@@ -11,25 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/50411.html</loc>
-    
-    <lastmod>2022-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/posts/21358.html</loc>
-    
-    <lastmod>2022-08-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/posts/13010.html</loc>
     
     <lastmod>2022-08-17</lastmod>
     
@@ -90,13 +72,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>http://example.com/tags/copilot/</loc>
-    <lastmod>2022-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>http://example.com/tags/hexo/</loc>
