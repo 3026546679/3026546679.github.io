@@ -74,6 +74,13 @@
 
   
   <url>
+    <loc>http://example.com/tags/hexo/</loc>
+    <lastmod>2022-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/javascript/</loc>
     <lastmod>2022-09-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -87,24 +94,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>http://example.com/tags/hexo/</loc>
-    <lastmod>2022-09-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
+    <loc>http://example.com/categories/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2022-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/</loc>
+    <loc>http://example.com/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2022-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
