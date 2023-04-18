@@ -1,0 +1,106 @@
+---
+title: 时间段区间区间获取【分钟】
+tags: javascript
+categories: 技术分享
+aplayer: true
+dplayer: true
+abbrlink: 6863
+---
+
+
+
+
+{%  dplayer
+    url="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-53aebf66-c1dd-41a2-bc07-db6afd0d5330/82fe8abe-b722-4664-9f01-de6cc38a92cd.mp4"
+    pic="0"
+%}
+
+
+> times是时间段 例如 期货的开盘时间到结束时间
+> 获取这些时间 用来填充 chart的x坐标
+
+
+
+``` javascript
+
+var times = [{
+   b: "21:00:00",
+    e: "01:00:00",
+    bd: "0",
+    ed: "0"
+  }, {
+    b: "09:00:00",
+    e: "10:15:00",
+    bd: "0",
+    ed: "0"
+  }, {
+    b: "10:30:00",
+    e: "11:30:00",
+    bd: "0",
+    ed: "0"
+  }, {
+    b: "13:30:00",
+    e: "15:00:00",
+    bd: "0",
+    ed: "0"
+  }];
+
+  function getTicks(times) {
+    var ticks = [];
+    times.forEach(x => {
+      ticks = ticks.concat(timeToTicks(x.b, x.e));
+    });
+    return ticks;
+  }
+
+  function timeToTicks(start, end) {
+    //开始的时间点
+    var ed = time2int(end);
+    var i = time2int(start);
+    var minute = 0,
+      hour = 0;
+    var ticks = [int2time(i)];
+    while (i != ed) {
+      i++;
+      hour = Math.floor(i / 100);
+      minute = i % 100;
+      if (minute >= 60) {
+        hour += 1;
+        minute -= 60;
+      }
+      if (hour >= 24) {
+        hour = 0;
+      }
+      i = hour * 100 + minute;
+      ticks.push(int2time(i));
+    }
+    return ticks;
+  }
+  /**
+   * 将给定的时间转换为分钟的整数
+   */
+  function time2int(t) {
+    return parseInt(t.replace(/:/g, '')) / 100
+  }
+  /**
+   * 将给定的整型数据转换为精确到分钟的时间字符串
+   * @param i 整型数值
+   * @returns 精确到分钟的时间字符串
+   */
+  function int2time(i) {
+    var st = padZero(i, 4);
+    return st.substring(0, 2) + ':' + st.substring(2);
+  }
+  /**
+   * 不足位数在左边补0
+   * @param number
+   * @param fill
+   * @returns
+   */
+  function padZero(number, fill) {
+    var new_number = number * (number > 0 ? 1 : -1),
+      len = ('' + new_number).length;
+    return Array(fill > len ? fill - len + 1 || 0 : 0).join(0) + new_number;
+}
+
+```
