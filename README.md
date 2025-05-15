@@ -9,3 +9,5 @@
 ## 服务器root密码  3026546679
 ## 命令 hexo clean
 ## 命令 hexo d -g
+
+## 2025-05-15 更新了主题代码 导致主题_congig.yml丢失 需要重新弄 现决定更换Astro 主题在 Astro分支上
